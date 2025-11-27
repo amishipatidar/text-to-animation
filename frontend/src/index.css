@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+/* 1. Global Reset & Base Styles */
+/* We set the body to be full screen and prevent scrolling for the "IDE" feel */
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* 2. Custom Utility: The Technical Grid Pattern */
+/* In Tailwind v4, we use @layer utilities to define custom classes */
+@layer utilities {
+  .bg-grid-pattern {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, #1f2937 1px, transparent 1px),
+      linear-gradient(to bottom, #1f2937 1px, transparent 1px);
+  }
+}
+
+/* 3. Custom Scrollbar Styling (Optional but recommended for the JSON viewer) */
+/* This gives the scrollbars a dark, sleek look matching your theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #374151; /* Gray-700 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4b5563; /* Gray-600 */
+}
